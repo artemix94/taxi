@@ -1,0 +1,1343 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+@import "fonts.css";
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Calibri';
+}
+
+.head {
+    background: #FFF;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+}
+
+.all_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.head_logo img {
+    width: 100%;
+}
+
+.head_number_icon img{
+    display: block;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #575757;
+    font-family: 'Bw Modelica SS01';
+    font-weight: Bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+}
+
+.menu a:hover {
+    color: #C4C4C4;
+    transition: 0.3s;
+}
+
+.menu li {
+    margin: 0px 30px;
+    text-align: center;
+}
+
+.head_nubmer {
+    display: flex;
+    align-items: center;
+}
+
+.head_number_icon img {
+    margin: 5px 20px;
+}
+
+.head_nubmer_phone a {
+    text-decoration: none;
+    font-family: 'Bw Modelica SS01';
+    font-size: 15px;
+    color: #575757;
+    font-weight: Bold;
+    border: none;
+}
+.head_nubmer_phone p {
+    margin: 3px 0px;
+}
+
+.menu_city a{
+    font-size: 14px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu_city a:hover {
+    color: #C4C4C4;
+    transition: 0.3s;
+}
+
+.menu_city li {
+    padding: 21px 33px 18px 47px;
+    border: 1px solid #E5E5E5;
+}
+
+.wrapper {
+    display: flex;
+    padding-top: 90px;
+}
+
+aside {
+    width: 15%;
+}
+
+.main_content {
+    width: 85%;
+    padding: 30px 40px;
+}
+
+.main_top {
+    background-image: url(../img/fon_avto.jpg);
+    background-size: cover;
+    background-position: 50% 65%;
+    background-repeat: no-repeat;
+    margin: -30px -40px 0;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 170px;
+    margin-bottom: 50px;
+}
+
+.main_top_content h1{
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.main_top_content p {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.btn {
+    color: #FFFFFF;
+    background-color: #ffcb4c;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 20px 50px;
+    border-radius: 40px;
+    position: relative;
+}
+
+.btn:hover {
+    background-color: #C4C4C4;
+    transition: 0.3s;
+}
+
+.btn:hover:before {
+    transition: 0.3s;
+    border: 1px solid #C4C4C4;
+}
+
+.btn:before {
+    content: "";
+    border: 1px solid #ffcb4c;
+    border-radius: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15% 55%;
+    transform: translate(-50%, -50%);
+}
+
+.general_description_info {
+    width: 50%;
+}
+
+.general_description_info p {
+    font-size: 14px;
+    color: #000000;
+    line-height: 23px;
+    letter-spacing: 0.1em;
+    width: 90%;
+}
+
+.general_description_image {
+    width: 50%;
+    text-align: center;
+}
+
+.general_description_image img {
+    margin-bottom: 35px;
+    width: 75%;
+}
+
+.all_general_description {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.main_title {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.main_paragraph{
+    font-size: 18px;
+    color: #575757;
+    margin-bottom: 65px;
+    line-height: 23px;
+}
+
+.company_paragraph {
+    width: 75%;
+}
+
+.dignity_icon {
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+    margin-right: 20px;
+    padding: 40px 45px;
+    position: relative;
+}
+
+.dignity_icon i {
+    color: #FFCB4C;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dignity_info h4 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.dignity_info p {
+    font-size: 16px;
+    color: #575757;
+}
+
+.why_us_info {
+    max-width: 440px;
+}
+
+.why_us_image img {
+    width: 100%;
+}
+
+.why_us_image {
+    width: calc(100% - 440px);
+}
+
+.dignity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.dignity_info p {
+    margin-bottom: 0px;
+}
+
+.dignity_info h4 {
+    margin-bottom: 7px;
+}
+
+.all_why_us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.why_us {
+    margin-bottom: 70px;
+}
+
+.company_image {
+    width: 35%;
+}
+
+.company_image img {
+    width: 100%;
+}
+
+.company_title {
+    width: 65%;
+    margin-left: 5%;
+}
+
+.about_company {
+    display: flex;
+    align-items: center;
+}
+
+.company {
+    margin-bottom: 90px;
+}
+
+.our_cars_title {
+    width: 85%;
+    margin-left: auto;
+}
+
+.cars_paragraph {
+    width: 45%;
+}
+
+.car_gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car_gallery li {
+    width: 33.3%;
+    cursor: pointer;
+}
+
+.car_gallery img {
+    width: 100%;
+    position: relative;
+}
+
+.our_cars {
+    margin-bottom: 55px;
+}
+
+.order_form input {
+    display: block;
+    padding: 20px 40px;
+    color: #575757;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    width: 55%;
+}
+
+.order {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 90px;
+}
+
+.all_order_form {
+    width: 55%;
+    padding-left: 40px;
+}
+
+.order_image img {
+    width: 100%;
+}
+
+.routes {
+    background: #E5E5E5; 
+}
+
+.all_routes {
+    text-align: center;
+        padding: 40px 180px;
+}
+
+.routes_directions h4 {
+    font-size: 18px;
+    color: #575757;
+    margin-bottom: 15px
+}
+
+.routes_directions a {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #000000;
+}
+
+.routes_directions li {
+    margin-bottom: 10px;
+}
+
+.routes_directions a:hover {
+    color: #ffcb4c;
+    transition: 0.3s;
+}
+
+.slick-next::before, .slick-prev::before {
+    font-size: 40px;
+    color: #575757;
+}
+
+.slick-prev {
+    left: 5%;
+    z-index: 5;
+}
+
+    .slick-next {
+    right: 5%;
+    z-index: 5;
+}
+
+footer {
+    background: #575757;
+    padding: 40px 35px;
+}
+
+.footer_logo {
+    text-align: center;
+}
+
+.footer_logo img {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footer_logo p {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.all_footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.soc_list p{
+    font-size: 19px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.soc_list_icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.messenger_icon {
+    width: 33%;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    background-color: #FFCB4C;
+    border-radius: 50%;
+    position: relative;
+}
+
+.messenger_icon:hover {
+    background: #c4c4c4;
+    transition: 0.3s;
+}
+
+.messenger_icon i {
+    color: #FFFFFF;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer_phone_number a {
+    display: block;
+}
+
+.footer_phone_number a:hover {
+    color: #FFCB4C;
+    transition: 0.3s;
+}
+
+.footer_number_info {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.footer_phone_number {
+    margin: 0px 12px;
+}
+
+.footer_phone_number a {
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.footer_phone_image {
+    margin: 0px 20px;
+}
+
+.footer_number {
+    text-align: center;
+}
+
+.Request_call a{
+    font-size: 16px;
+    color: #FFCB4C;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.Request_call a:hover {
+    text-decoration: underline;
+}
+
+.footer_slogan p {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.payment {
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+
+.payment_cards img {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.payment_title {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    line-height: 22px;
+    margin-bottom: 70px;
+}
+
+.payment_title h1 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+.payment_title p {
+    font-size: 18px;
+    color: #575757;
+}
+
+.cash_payment {
+    width: 30%;
+}
+
+.cash_payment h4 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.cash_payment p {
+    font-size: 16px;
+    color: #575757;
+    line-height: 20px;
+    margin: 0px 40px;
+}
+
+.cash_payment i {
+    color: #FFCB4C;
+    font-size: 35px;
+    margin-bottom: 20px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 18px;
+}
+
+.all_payment_options {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.payment_options {
+    margin-bottom: 125px;
+}
+
+.all_payment_car h2 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.payment_car_form input{
+    width: 85%;
+}
+
+.all_payment_car {
+    margin: auto;
+    width: 40%;
+    text-align: center;
+}
+
+.payment_car_image {
+    position: relative;
+}
+
+.payment_car_image img{
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    transform: translate(40px, 80%);
+}
+
+.about_us_title {
+    margin-bottom: 65px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.all_our_advantages {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.options_advantages {
+    width: 33%;
+}
+
+.options_advantages_image {
+    width: 33%;
+    text-align: center;
+}
+
+.options_advantages_image img {
+    width: 75%;
+}
+
+.advantages_card_title h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.advantages_card_title p {
+    font-size: 14px;
+    color: #575757;
+}
+
+.advantages_card {
+    margin-bottom: 65px;
+    display: flex;
+}
+
+.advantages_card_icon {
+    margin: 0px 20px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    position: relative;
+}
+
+.advantages_card_icon i {
+    font-size: 50px;
+    color: #FFCB4C;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.advantages_card_title {
+    width: 55%;
+}
+
+.advantages_card_right {
+    justify-content: flex-end;
+}
+
+.advantages_card_left {
+    text-align: right;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.our_advantages {
+    margin-bottom: 90px;
+}
+
+.about_our_cars_avto {
+    margin-left: -40px;
+    margin-right: -40px;
+}
+
+.about_our_cars_title {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.about_cars {
+    margin-bottom: 75px;
+}
+
+.about_form input{
+    width: 85%;
+    text-align: center;
+}
+
+.about_form input:last-child {
+        margin-bottom: 45px;
+}
+
+.all_about_form {
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.all_about_form h2 {
+    margin-bottom: 35px;
+}
+
+.about_main_form {
+    margin-bottom: 100px;
+}
+
+.city_ua {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.city_ua a {
+    outline: none;
+}
+
+.city_title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.city_title h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+}
+
+.city_ua a {
+    color: #575757;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 20px; 
+    margin-right: 20px;
+}
+
+.city_ua a:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #FFCB4C;
+    margin-left: 5px;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.city_ua a:hover:after {
+    opacity: 1;
+    transition: 1s;
+}
+
+.city_ua a:first-child:after{
+    content: "";
+    margin-left: 0px;   
+    width: 90px;
+}
+
+.city_title input {
+    border: none;
+    opacity: 0.4;
+    font-size: 12px;
+}
+
+.city_title i {
+    opacity: 0.4;
+    font-size: 12px;
+    padding: 0;
+}
+
+.city_title form:after {
+    content: "";
+    display: block;
+    width: 151px;
+    height: 3px;
+    background-color: #FFCB4C;
+    margin: auto;
+    margin-top: 5px;
+    opacity: 0.4;
+}
+
+.city_title form {
+    position: absolute;
+    right: 8%;
+    top: 30%;
+    text-align: left;
+}
+
+/*выбор города */
+
+.city_selection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.city_foto {
+    width: 25%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.city_foto img{
+    width: 90%;
+}
+
+.city_name h4 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.city_name p {
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.city_name {
+    position: absolute;
+    z-index: 2;
+    bottom: 10%;
+    left: 10%;
+    width: 75%;
+}
+
+
+
+
+
+
+
+/*ПОПАП*/
+
+.overlay_popup {
+  display:none;
+  position:fixed;
+  z-index: 999;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background:#000;
+  opacity:0.7;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width:50%;
+  background-color: white;
+}
+
+.object {
+    display: flex;
+    justify-content: space-around;
+}
+
+.object li {
+    list-style: none;
+    font-size: 14px;
+    padding-bottom: 20px;
+    text-decoration: underline;
+}
+
+.popup {
+    text-align: center;
+    padding: 55px 0px;
+}
+
+.popup h4 {
+    font-size: 24px;
+    padding-top: 45px;
+    margin-bottom: 35px;
+}
+
+.contacts_title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.connection_phone h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.connection_phone p {
+    font-size: 16px;
+    color: #575757;
+    margin-bottom: 30px;
+}
+
+.connection_phone_number {
+    margin-bottom: 15px;
+}
+
+.connection_phone_number a{
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+    color: #000000;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.connection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contacts {
+    margin-bottom: 55px;
+}
+
+.connection_order_title h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.connection_order_title p {
+    font-size: 16px;
+    color: #575757;
+    margin-bottom: 15px;
+}
+
+.all_connection_order {
+    display: flex;
+    justify-content: space-around;
+}
+
+.connection_order_title {
+    width: 25%;
+}
+
+.connection_order_form {
+    width: 40%;
+    text-align: center;
+}
+
+.connection_form input {
+    width: 80%;
+}
+
+
+
+.menu-icon {
+    display: none;
+    font-size: 35px;
+    color: #ffcb4c;
+    background: transparent;
+    border: none;
+    margin: auto;
+}
